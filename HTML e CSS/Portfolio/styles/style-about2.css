@@ -80,7 +80,11 @@ body {
     height: 200px;
     position: relative; 
     transform-style: preserve-3d;
-    transition: transform 600ms ease-in-out;
+    /* transition: transform 1.5s ease-in-out; */
+    animation-name: flip;
+    animation-duration: 5s;
+    animation-delay: 20s;
+    animation-iteration-count: infinite;    
 }
 
 .box__front, .box__back { 
@@ -101,10 +105,10 @@ body {
     
 }
 
-.box:hover .box__content{
+/* .box:hover .box__content{
     transform: rotateY(180deg);
     
-}
+} */
 
 .rodape {
     padding: 24px;
@@ -114,6 +118,18 @@ body {
     font-family: var(--fonte-secundaria);
     font-size: 1.5rem;
     font-weight: 400;
+}
+
+@keyframes flip {
+    0% {
+        transform: rotateY(0deg);
+    }
+    50%{
+        transform: rotateY(180deg);
+    }
+    100%{
+        transform: rotateY(360deg);
+    }
 }
 
 @media(max-width: 750px ) {
